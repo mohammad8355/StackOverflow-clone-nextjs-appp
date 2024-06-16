@@ -13,17 +13,21 @@ export default function ThemeProvider({
 }) {
   const [mode, setMode] = useState("");
   const handleChangeTheme = function () {
-    if (mode === "dark") {
-      setMode("light");
-      document.documentElement.classList.add("light");
-    } else {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-schema:dark)").matches)
+    ) {
       setMode("dark");
       document.documentElement.classList.add("dark");
+    } else {
+      setMode("light");
+      document.documentElement.classList.remove("dark");
     }
   };
   useEffect(() => {
     handleChangeTheme();
-  }, []);
+  }, [mode]);
 
   return (
     <ThemeContext.Provider value={{ mode, setMode }}>
