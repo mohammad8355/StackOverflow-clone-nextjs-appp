@@ -15,17 +15,15 @@ export default function ThemeProvider({
   const handleChangeTheme = function () {
     if (mode === "dark") {
       setMode("light");
-      document.documentElement.classList.remove("dark");
       document.documentElement.classList.add("light");
     } else {
       setMode("dark");
-      document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
     }
   };
   useEffect(() => {
     handleChangeTheme();
-  }, [mode]);
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ mode, setMode }}>
