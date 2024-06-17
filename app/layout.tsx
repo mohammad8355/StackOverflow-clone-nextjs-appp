@@ -42,7 +42,9 @@ export default function RootLayout({
       }}
     >
       <html lang="en">
-        <body className={`${inter.variable} ${SpaceGrotesk.variable}`}>
+        <body
+          className={`${inter.variable} ${SpaceGrotesk.variable} no-scrollbar`}
+        >
           <ThemeProvider>{children}</ThemeProvider>
         </body>
       </html>
