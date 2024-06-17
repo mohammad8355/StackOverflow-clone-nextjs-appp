@@ -3,6 +3,8 @@ import React from "react";
 import Image from "next/image";
 import { SignedIn, SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
 import Theme from "./Theme";
+import MobileNav from "./MobileNav";
+import GlobalSearch from "../GlobalSearch/GlobalSearch";
 export default function Navbar() {
   return (
     <nav className="sm:px-12 dark:shadow-none w-full gap-5 p-6 shadow-light-300 flex-between background-light900_dark200 fixed z-50">
@@ -17,7 +19,7 @@ export default function Navbar() {
           Dev <span className="text-primary-500">Overflow</span>
         </p>
       </Link>
-      GlobalSearch
+      <GlobalSearch />
       <div className="flex-between gap-5">
         <Theme />
         <SignedIn>
@@ -36,7 +38,7 @@ export default function Navbar() {
         <SignedOut>
           <SignInButton />
         </SignedOut>
-        MobileNav
+        <MobileNav />
       </div>
     </nav>
   );
