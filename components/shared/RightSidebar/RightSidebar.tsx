@@ -2,6 +2,14 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import RenderTag from "../RenderTag/RenderTag";
+const PopularTags = [
+  { _id: "1", name: "javascript", totalQuestions: 32 },
+  { _id: "2", name: "react", totalQuestions: 37 },
+  { _id: "3", name: "vue", totalQuestions: 92 },
+  { _id: "4", name: "next", totalQuestions: 72 },
+  { _id: "5", name: "redux", totalQuestions: 42 },
+];
 export default function RightSidebar() {
   return (
     <section
@@ -36,15 +44,15 @@ export default function RightSidebar() {
       <div className="mt-16">
         <h3 className="h3-bold text-dark200_light900">Popular Tags</h3>
         <div className="mt-7 flex flex-col gap-4">
-          <Link href="#" className="flex justify-between gap-2">
-            <Badge
-              className="subtle-medium background-light800_dark300 text-light400_light500 rounded-md border-none uppercase px-4 py-2
-            "
-            >
-              Next js
-            </Badge>
-            <p className="small-medium text-dark500_light700">32</p>
-          </Link>
+          {PopularTags.map((item) => (
+            <RenderTag
+              key={item._id}
+              _id={item._id}
+              name={item.name}
+              ShowCount={true}
+              totalQuestions={item.totalQuestions}
+            />
+          ))}
         </div>
       </div>
     </section>
