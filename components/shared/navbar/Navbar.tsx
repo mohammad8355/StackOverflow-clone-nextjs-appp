@@ -7,7 +7,12 @@ import MobileNav from "./MobileNav";
 import GlobalSearch from "../GlobalSearch/GlobalSearch";
 export default function Navbar() {
   return (
-    <nav className="sm:px-12 dark:shadow-none w-full gap-5 p-6 shadow-light-300 flex-between background-light900_dark200 fixed z-50">
+    <nav
+      className="flex-between 
+        background-light900_dark200 fixed z-50 
+        w-full gap-5 p-6 shadow-light-300 
+        dark:shadow-none sm:px-12"
+    >
       <Link className="flex items-center gap-1 " href="/">
         <Image
           alt="DevFlow"

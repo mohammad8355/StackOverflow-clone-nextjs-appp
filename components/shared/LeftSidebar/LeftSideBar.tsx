@@ -11,7 +11,7 @@ export default function LeftSideBar() {
   return (
     <div
       className="max-sm:hidden max-md:w-max sticky top-0 left-0 h-screen pt-36 p-6 flex custom-scrollbar overflow-auto 
-    flex-col items-start justify-center background-light900_dark200 text-light-800"
+    flex-col items-start justify-center background-light900_dark200 text-light-800 light-border"
     >
       <div className="w-full flex pt-24 h-screen custom-scrollbar p-2 flex-col gap-6">
         {sidebarLinks.map((item) => {
@@ -21,6 +21,7 @@ export default function LeftSideBar() {
           return (
             <Link
               href={item.route}
+              key={item.route}
               className={`${
                 isActive
                   ? "primary-gradient rounded-lg text-light-900"
